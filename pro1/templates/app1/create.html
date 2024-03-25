@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Create Page</title>
+{% endblock %}
+{% block content %}
+    <form method="post" class="m-auto mt-50 w-50 ">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit">
+    </form>
+{% endblock %}

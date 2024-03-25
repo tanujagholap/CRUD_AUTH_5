@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>All Details</title>
+
+{% endblock %}
+{% block content %}
+
+    <table border="2px" class="table table-success table-striped w-50 mt-5 m-auto">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>PRODUCT NAME</th>
+                <th>PRODUCT PRICE</th>
+                <th>QUANTITY</th>
+                <th>PURCHASE DATE/th>
+                <th colspan="2" >ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in form %}
+            <tr>
+                <td>{{ i.id }}</td>
+                <td>{{ i.pro_name }}</td>
+                <td>{{ i.pro_price }}</td>
+                <td>{{ i.pro_quantity }}</td>
+                <td>{{ i.purchase_date }}</td>
+                <td>
+                    <a href="{% url 'update_url' i.id %}">
+                        <button>UPDATE</button>
+                    </a>
+                </td>
+                <td>
+                    <a href="{% url 'delete_url' i.id %}">
+                        <button>DELETE</button>
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

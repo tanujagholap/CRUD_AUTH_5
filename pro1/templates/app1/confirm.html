@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Title</title>
+{% endblock %}
+{% block content %}
+  <form method="post" class="m-auto mt-50 w-50">
+    {% csrf_token %}
+    <h2>ARE YOU SURE ?</h2>
+    <button>YES</button>
+    <a href="{% url 'show_url' %}">
+      <button type="button">NO</button>
+    </a>
+  </form>
+
+{% endblock %}
